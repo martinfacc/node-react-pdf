@@ -1,11 +1,11 @@
 import express from 'express'
 import { renderToBuffer } from '@react-pdf/renderer'
-import { APP_PORT, APP_URL } from './env.js'
-import { MyDocument } from '../build/index.js'
+import { APP_PORT, APP_URL } from './env'
+import { MyDocument } from './components/index'
 
 const app = express()
 
-const createPDF = async (data) => {
+const createPDF = async (data: any) => {
   return await renderToBuffer(MyDocument({ ...data }))
 }
 
